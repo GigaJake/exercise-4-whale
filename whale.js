@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
 	var num = parseInt(location.hash.substr(1));
-	console.log(num);
+	//console.log(num);
 
 	if(isNaN(num))
 	{
@@ -8,6 +8,7 @@ jQuery(document).ready(function($){
 	}
 
 	$.get('/whale/txt/' + num + '.txt', function(txt) {
-		console.log(txt);
+		$('a').html(txt);
+		$('a').attr('href','#'+(num+1));
 	});
 });
